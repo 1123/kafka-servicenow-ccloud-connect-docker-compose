@@ -1,0 +1,43 @@
+{
+    "name": "sn-sink-topic1-json",
+    "config": {
+        "connector.class": "io.confluent.connect.servicenow.ServiceNowSinkConnector",
+        "topics": "topic1",
+        "servicenow.url": "SN_INSTANCE_URL",
+        "tasks.max": "1",
+        "servicenow.table": "u_test_table",
+        "servicenow.user": "admin",
+        "servicenow.password": "SN_PASSWORD",
+        "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "confluent.topic.bootstrap.servers": "BOOTSTRAP_SERVERS",
+        "confluent.topic.replication.factor": "3",
+        "confluent.topic.sasl.jaas.config": "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"CC_API_KEY\" password=\"CC_API_SECRET\";",
+        "confluent.topic.security.protocol":"SASL_SSL",
+        "confluent.topic.sasl.mechanism":"PLAIN",
+        "confluent.license": "", 
+        "reporter.bootstrap.servers": "BOOTSTRAP_SERVERS",
+        "reporter.sasl.jaas.config": "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"CC_API_KEY\" password=\"CC_API_SECRET\";",
+        "reporter.security.protocol":"SASL_SSL",
+        "reporter.sasl.mechanism":"PLAIN",
+        "reporter.producer.bootstrap.servers": "BOOTSTRAP_SERVERS",
+        "reporter.producer.sasl.jaas.config": "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"CC_API_KEY\" password=\"CC_API_SECRET\";",
+        "reporter.producer.security.protocol":"SASL_SSL",
+        "reporter.producer.sasl.mechanism":"PLAIN",
+        "reporter.admin.bootstrap.servers": "BOOTSTRAP_SERVERS",
+        "reporter.admin.sasl.jaas.config": "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"CC_API_KEY\" password=\"CC_API_SECRET\";",
+        "reporter.admin.security.protocol":"SASL_SSL",
+        "reporter.admin.sasl.mechanism":"PLAIN",
+        "reporter.error.topic.name": "test-error",
+        "reporter.error.topic.replication.factor": 3,
+        "reporter.error.topic.key.format": "string",
+        "reporter.error.topic.value.format": "string",
+        "reporter.result.topic.name": "test-result",
+        "reporter.result.topic.key.format": "string",
+        "reporter.result.topic.value.format": "string",
+        "reporter.result.topic.replication.factor": 3,
+        "errors.deadletterqueue.topic.name" : "sn-sink-errors-dlq"
+    }
+}
+
+

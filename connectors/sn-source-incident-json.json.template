@@ -1,0 +1,23 @@
+{
+    "name": "sn-source-incident-json",
+    "config": {
+        "connector.class": "io.confluent.connect.servicenow.ServiceNowSourceConnector",
+        "kafka.topic": "sn-import-incident-json",
+        "servicenow.url": "SN_INSTANCE_URL",
+        "tasks.max": "1",
+        "servicenow.table": "incident",
+        "servicenow.user": "admin",
+        "servicenow.password": "SN_PASSWORD",
+        "servicenow.since": "2019-01-01",
+        "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "confluent.topic.bootstrap.servers": "BOOTSTRAP_SERVERS",
+        "confluent.license": "", 
+        "poll.interval.s": "10",
+        "confluent.topic.replication.factor": "3",
+        "confluent.topic.sasl.jaas.config": "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"CC_API_KEY\" password=\"CC_API_SECRET\";",
+        "confluent.topic.security.protocol":"SASL_SSL",
+        "confluent.topic.sasl.mechanism":"PLAIN"
+    }
+}
+
