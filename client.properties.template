@@ -5,4 +5,7 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 ssl.endpoint.identification.algorithm=https 
 sasl.mechanism=PLAIN 
 # Confluent Cloud Schema Registry
-schema.registry.url=http://localhost:8085
+schema.registry.url=SCHEMA_REGISTRY_URL
+basic.auth.credentials.source=USER_INFO
+schema.registry.basic.auth.user.info=SCHEMA_REGISTRY_KEY:SCHEMA_REGISTRY_SECRET
+
