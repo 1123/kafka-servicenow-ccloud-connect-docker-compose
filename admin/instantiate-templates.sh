@@ -2,7 +2,7 @@
 
 set -u -e 
 
-for TEMPLATE in *.template connectors/*.template; do
+for TEMPLATE in $(find .. -name "*.template"); do
   FILE=$(echo $TEMPLATE | sed 's/.template//')
   echo "creating $FILE"
   cat $TEMPLATE |\
